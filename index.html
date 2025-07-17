@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miso | You Imagine, We Create</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #b898ea;
+  background-size: 800% 800%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px 20px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #2c2c2c;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #6e3cbc;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+.tagline {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 35px;
+  opacity: 0.95;
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+section#about {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+section#about h2 {
+  font-size: 2rem;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+}
+
+section#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+#featured {
+  padding: 60px 20px;
+  text-align: center;
+  background: #b898ea;
+}
+
+#featured h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.featured-card {
+  background: #F5F8F9;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.featured-card img {
+  width: 100%;
+  max-height: 200px; 
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.featured-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.featured-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #6e3cbc;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-top: auto;         
+  margin-bottom: 10px; 
+}
+
+.btn:hover {
+  background-color: #552ca1;
+}
+
+.explore-wrapper {
+  text-align: center;
+  margin-top: 40px; 
+}
+
+#products {
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+  background: #fdfcfe;
+}
+
+#products h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2c2c2c;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.price-tag {
+  font-weight: bold;
+  color: #6e3cbc;
+  font-size: 1rem;
+}
+
+
+footer {
+  margin-top: auto;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 0.95rem;
+  color: #2c2c2c;
+  backdrop-filter: blur(8px);
+}
+
+.footer-content a {
+  color: #6e3cbc;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .tagline {
+    font-size: 1.7rem;
+  }
+
+  .container {
+    padding: 30px 20px;
+  }
+
+  nav a {
+    margin-left: 15px;
+    font-size: 0.9rem;
+  }
+
+  header {
+    padding: 10px 20px;
+  }
+
+  .featured-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <img src="logo-3.png" alt="Miso Logo" class="logo-icon" />
+      <span class="nav-logo">Miso</span>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#footer">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="tagline">You Imagine, We Create</div>
+    <img src="product-image.png" alt="Product" class="product-image" />
+  </div>
+
+  <section id="about">
+    <h2>About Miso</h2>
+    <p>
+     Miso is a creative startup redefining emotional gifting through imagination, personalization, and design. 
+     We create digital-first experiences that help people express what truly matters.<br>
+     We believe in combining technology and creativity to build memorable moments.<br>
+     Our belief: <b>"You Imagine, We Create."</b>
+    </p>
+  </section>
+
+  <section id="featured">
+    <h2>Featured Products</h2>
+    <div class="featured-grid">
+      <div class="featured-card">
+        <img src="product2.jpg" alt="Personalized Frame" />
+        <div class="featured-content">
+          <h3>Personalized Frame</h3>
+          <p>Custom-made photo frame with messages for your loved ones.</p>
+          <a href="#" class="btn">Shop Now</a>
+        </div>
+      </div>
+
+      <div class="featured-card">
+        <img src="product1.jpg" alt="Magic Message Box" />
+        <div class="featured-content">
+          <h3>Magic Message Box</h3>
+          <p>A mystery box that reveals hidden messages in a creative way.</p>
+          <a href="#" class="btn">Shop Now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="explore-wrapper">
+      <a href="#" class="btn">Explore</a>
+    </div>
+  </section>
+
+<section id="products">
+  <h2>Our Products</h2>
+  <div class="product-grid">
+    <!-- Product Card 1 -->
+    <div class="product-card">
+      <img src="placeholder1.jpg" alt="Product 1">
+      <h3>Product Name 1</h3>
+      <p>Short description of product 1.</p>
+      <span class="price-tag">₹499</span>
+    </div>
+
+    <!-- Product Card 2 -->
+    <div class="product-card">
+      <img src="placeholder2.jpg" alt="Product 2">
+      <h3>Product Name 2</h3>
+      <p>Short description of product 2.</p>
+      <span class="price-tag">₹699</span>
+    </div>
+
+    <!-- Product Card 3 -->
+    <div class="product-card">
+      <img src="placeholder3.jpg" alt="Product 3">
+      <h3>Product Name 3</h3>
+      <p>Short description of product 3.</p>
+      <span class="price-tag">₹899</span>
+    </div>
+
+    <!-- Product Card 4 -->
+    <div class="product-card">
+      <img src="placeholder4.jpg" alt="Product 4">
+      <h3>Product Name 4</h3>
+      <p>Short description of product 4.</p>
+      <span class="price-tag">₹999</span>
+    </div>
+  </div>
+</section>
+
+
+  <footer id="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Miso. All rights reserved.</p>
+      <p>Contact: <a href="mailto:contact@misogifts.com">contact@misogifts.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
