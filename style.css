@@ -6,23 +6,30 @@
 }
 
 body {
-  background: #b898ea;
-  background-size: 800% 800%;
+  background: linear-gradient(135deg, #9075C8, #B898EA, #8D8AB7, #F3ACC9, #F5F8F9);
+  background-size: 400% 400%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 80px 20px 20px;
+  animation: gradientShift 20s ease infinite;
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* ========== HEADER ========== */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(12px);
-  flex-wrap: wrap;
+  background: linear-gradient(to right, #1D306E, #9075C8, #F3ACC9, #8D8AB7);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,13 +53,13 @@ header {
 .nav-logo {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #2c2c2c;
+  color: #F5F8F9;
 }
 
 nav a {
   margin-left: 25px;
   text-decoration: none;
-  color: #2c2c2c;
+  color: #F5F8F9;
   font-weight: 500;
   font-size: 1rem;
   display: inline-flex;
@@ -61,14 +68,11 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a i {
-  font-size: 1.1rem;
-}
-
 nav a:hover {
-  color: #6e3cbc;
+  color: #FFD3EC;
 }
 
+/* ========== HERO SECTION ========== */
 .container {
   text-align: center;
   background: rgba(255, 255, 255, 0.15);
@@ -85,14 +89,9 @@ nav a:hover {
   color: #2c2c2c;
   margin-bottom: 35px;
   opacity: 0.95;
-  animation: fadeInUp 1s ease forwards;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* ========== ABOUT SECTION ========== */
 section#about {
   padding: 100px 20px 40px;
   text-align: center;
@@ -112,14 +111,16 @@ section#about p {
   line-height: 1.6;
 }
 
+/* ========== FEATURED ========== */
 #featured {
   padding: 60px 20px;
   text-align: center;
   background: #b898ea;
+  margin-bottom: 40px;
 }
 
 #featured h2 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   margin-bottom: 40px;
   color: #333;
 }
@@ -144,6 +145,11 @@ section#about p {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
+}
+
+.featured-card:hover,
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
 .featured-card img,
@@ -179,8 +185,8 @@ section#about p {
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  margin-top: auto;         
-  margin-bottom: 10px; 
+  margin-top: auto;
+  margin-bottom: 10px;
   border: none;
   cursor: pointer;
 }
@@ -195,14 +201,16 @@ section#about p {
   margin-top: 40px; 
 }
 
+/* ========== PRODUCTS ========== */
 #products {
   padding: 60px 20px;
   text-align: center;
   background: #b898ea;
+  margin-bottom: 40px;
 }
 
 #products h2 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   margin-bottom: 40px;
   color: #333;
 }
@@ -215,6 +223,7 @@ section#about p {
   margin: 0 auto;
 }
 
+/* ========== FOOTER ========== */
 footer {
   margin-top: auto;
   padding: 30px 20px;
@@ -249,6 +258,7 @@ footer {
   color: #552ca1;
 }
 
+/* ========== RESPONSIVE ========== */
 @media (max-width: 600px) {
   body {
     padding: 100px 10px 20px;
