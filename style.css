@@ -1,3 +1,4 @@
+/* ========= GLOBAL ========= */
 * {
   margin: 0;
   padding: 0;
@@ -22,8 +23,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-
-/* ========== HEADER ========== */
+/* ========= HEADER ========= */
 header {
   position: fixed;
   top: 0;
@@ -72,15 +72,15 @@ nav a:hover {
   color: #FFD3EC;
 }
 
-/* ========== HERO SECTION ========== */
+/* ========= HERO ========= */
 .container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 50px 40px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(12px);
 }
 
 .tagline {
@@ -91,19 +91,19 @@ nav a:hover {
   opacity: 0.95;
 }
 
-/* ========== ABOUT SECTION ========== */
-section#about {
+/* ========= ABOUT ========= */
+#about {
   padding: 100px 20px 40px;
   text-align: center;
 }
 
-section#about h2 {
+#about h2 {
   font-size: 2rem;
   color: #2b2b2b;
   margin-bottom: 20px;
 }
 
-section#about p {
+#about p {
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
@@ -111,7 +111,7 @@ section#about p {
   line-height: 1.6;
 }
 
-/* ========== FEATURED ========== */
+/* ========= FEATURED SECTION ========= */
 #featured {
   padding: 60px 20px;
   text-align: center;
@@ -175,8 +175,13 @@ section#about p {
   margin-bottom: 15px;
 }
 
+/* ========= BUTTON STYLES ========= */
 .btn,
-.btn-pr {
+.btn-pr,
+a.btn,
+a.btn-pr,
+button.btn,
+button.btn-pr {
   display: inline-block;
   background-color: #6e3cbc;
   color: #fff;
@@ -192,16 +197,20 @@ section#about p {
 }
 
 .btn:hover,
-.btn-pr:hover {
+.btn-pr:hover,
+a.btn:hover,
+a.btn-pr:hover,
+button.btn:hover,
+button.btn-pr:hover {
   background-color: #552ca1;
 }
 
 .explore-wrapper {
   text-align: center;
-  margin-top: 40px; 
+  margin-top: 40px;
 }
 
-/* ========== PRODUCTS ========== */
+/* ========= PRODUCTS SECTION ========= */
 #products {
   padding: 60px 20px;
   text-align: center;
@@ -223,7 +232,37 @@ section#about p {
   margin: 0 auto;
 }
 
-/* ========== FOOTER ========== */
+/* ========= PRODUCT PAGE IMAGE ========= */
+.container img {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.container h1 {
+  font-size: 2rem;
+  color: #2c2c2c;
+  margin-bottom: 20px;
+}
+
+.container p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.container h2 {
+  font-size: 1.4rem;
+  color: #6e3cbc;
+  margin-bottom: 20px;
+}
+
+/* ========= FOOTER ========= */
 footer {
   margin-top: auto;
   padding: 30px 20px;
@@ -258,7 +297,7 @@ footer {
   color: #552ca1;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========= RESPONSIVE ========= */
 @media (max-width: 600px) {
   body {
     padding: 100px 10px 20px;
