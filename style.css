@@ -33,10 +33,39 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 8px 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
+
+
+.search-bar {
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  gap: 6px;
+}
+
+.search-bar input {
+  padding: 6px 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.search-bar button {
+  background: #6e3cbc;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #552ca1;
+}
+
 
 .brand {
   display: flex;
@@ -73,22 +102,44 @@ nav a:hover {
 }
 
 /* ========= HERO ========= */
-.container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+.hero-section-with-bg {
+  width: 100vw;
+  height: 100vh;
+  padding: 70px 20px 0;
+  background-image: url('hero-bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  backdrop-filter: blur(12px);
+  position: relative;
 }
 
-.tagline {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #2c2c2c;
-  margin-bottom: 35px;
-  opacity: 0.95;
+.hero-section-with-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); 
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ========= ABOUT ========= */
@@ -190,7 +241,7 @@ button.btn-pr {
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s ease;
-  margin-top: auto;
+  margin-top: 10px;
   margin-bottom: 10px;
   border: none;
   cursor: pointer;
@@ -232,6 +283,58 @@ button.btn-pr:hover {
   margin: 0 auto;
 }
 
+/* ========= Review Section ========= */
+
+#reviews {
+  padding: 60px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #6e3cbc;
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  color: #444;
+  text-align: left;
+}
+
+.review-card .stars {
+  color: #ffb700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  margin-bottom: 10px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.review-card span {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #6e3cbc;
+}
+
+
 /* ========= PRODUCT PAGE IMAGE ========= */
 .container img {
   max-width: 100%;
@@ -261,6 +364,15 @@ button.btn-pr:hover {
   color: #6e3cbc;
   margin-bottom: 20px;
 }
+/* ==== Price tag design ===== */
+.price-tag {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+  display: block;
+}
+
 
 /* ========= FOOTER ========= */
 footer {
@@ -327,14 +439,15 @@ footer {
     margin: 0 10px;
     font-size: 0.85rem;
   }
-
-  .container {
-    padding: 25px 15px;
+  
+   .hero-text h1 {
+    font-size: 2.2rem;
   }
 
-  .tagline {
-    font-size: 1.7rem;
+  .hero-text p {
+    font-size: 1rem;
   }
+  
 
   .product-grid,
   .featured-grid {

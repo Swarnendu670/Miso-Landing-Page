@@ -3,9 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <title>Personalised Frame | Miso</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <header>
+  <div class="brand">
+    <img src="logo-3.png" alt="Miso Logo" class="logo-icon" />
+    <span class="nav-logo">Miso</span>
+  </div>
+
+  <div class="search-bar">
+  <input type="text" placeholder="Search products..." />
+  <button><i class="fas fa-search"></i></button>
+  </div>
+
+  <nav>
+    <a href="#"><i class="fas fa-home"></i>Home</a>
+    <a href="#about"><i class="fas fa-user"></i>About</a>
+    <a href="#footer"><i class="fas fa-envelope"></i>Contact</a>
+  </nav>
+</header>
+
   <div class="container">
     <h1>Personalised Frame</h1>
     <img src="product2.jpg" alt="Personalized Frame" />
@@ -14,5 +34,54 @@
     <button class="btn-pr">Buy Now</button>
     <a href="index.html" class="btn-pr">← Back to Home</a>
   </div>
+
+   <!-- Review Section -->
+    <section id="reviews">
+     <h2>Customer Reviews</h2>
+       <div class="review-list">
+         <div class="review-card">
+          <p class="stars">⭐️⭐️⭐️⭐️⭐️</p>
+          <p>"Loved this so much! It made the perfect gift."</p>
+          <span>- Ananya S.</span>
+         </div>
+         <div class="review-card">
+          <p class="stars">⭐️⭐️⭐️⭐️</p>
+          <p>"Well designed and very affordable. Will buy again."</p>
+          <span>- Rishi K.</span>
+         </div>
+         <div class="review-card">
+          <p class="stars">⭐️⭐️⭐️⭐️⭐️</p>
+          <p>"Unique and thoughtful. Delivered earlier than expected!"</p>
+          <span>- Megha D.</span>
+         </div>
+       </div>
+    </section>
+ 
+    <!-- Footer section -->
+  <footer id="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Miso. All rights reserved.</p>
+      <p>
+        <a href="mailto:hellomiso@gmail.com">
+          <i class="fas fa-envelope"></i> hellomiso@gmail.com
+        </a>
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/miso" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/miso" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.twitter.com/miso" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/miso" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
