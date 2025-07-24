@@ -105,7 +105,7 @@ nav a:hover {
 .hero-section-with-bg {
   width: 100vw;
   height: 100vh;
-  padding: 70px 20px 0;
+  padding: 70px ;
   background-image: url('hero-bg.jpg'); 
   background-size: cover;
   background-position: center;
